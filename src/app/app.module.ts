@@ -10,7 +10,7 @@ import { EffectsModule } from '@ngrx/effects';
   ],
   imports: [
     BrowserModule,
-    EffectsModule.forRoot([])
+    // EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]
