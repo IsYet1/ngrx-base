@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './appState';
+import { AppEffects } from './appState/app.effects';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { reducers, metaReducers } from './appState';
     StoreModule.forRoot(reducers, {
       metaReducers
     }),
-    // EffectsModule.forRoot([])
+    EffectsModule.forRoot([AppEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent]
