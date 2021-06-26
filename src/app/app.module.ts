@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './appState';
 
 @NgModule({
   declarations: [
@@ -10,6 +12,9 @@ import { EffectsModule } from '@ngrx/effects';
   ],
   imports: [
     BrowserModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers
+    }),
     // EffectsModule.forRoot([])
   ],
   providers: [],
