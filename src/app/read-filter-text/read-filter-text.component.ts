@@ -11,13 +11,14 @@ import * as appSelectors from 'src/app/appState/app.selectors';
 })
 export class ReadFilterTextComponent implements OnInit {
 
+  filterItems: string[] = [];
   filterText = '';
 
   constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
     this.store.pipe(select(appSelectors.getFilterText)).subscribe(
-      filterText => this.filterText = filterText
+      filterText => this.filterItems.unshift(filterText)
     )
   }
 
