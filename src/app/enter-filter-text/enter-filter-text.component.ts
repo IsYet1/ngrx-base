@@ -16,7 +16,7 @@ export class EnterFilterTextComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.store.dispatch(appActions.updateFilterText({filterText: 'Set manually'}));
+    this.store.dispatch(appActions.updateFilterText({filterText: 'Set manually in the ngOnInit'}));
   }
 
 }
