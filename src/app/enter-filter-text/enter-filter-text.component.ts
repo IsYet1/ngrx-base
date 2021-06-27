@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/appState/index';
+import * as appActions from 'src/app/appState/app.actions';
+
 @Component({
   selector: 'app-enter-filter-text',
   templateUrl: './enter-filter-text.component.html',
@@ -7,9 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnterFilterTextComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private store: Store<AppState>,
+  ) { }
 
   ngOnInit(): void {
+    this.store.dispatch(appActions.updateFilterText({filterText: 'Set manually'}));
   }
 
 }

@@ -7,11 +7,13 @@ import { StoreModule } from '@ngrx/store';
 import { reducer } from './appState';
 import { AppEffects } from './appState/app.effects';
 import { EnterFilterTextComponent } from './enter-filter-text/enter-filter-text.component';
+import { ReadFilterTextComponent } from './read-filter-text/read-filter-text.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EnterFilterTextComponent
+    EnterFilterTextComponent,
+    ReadFilterTextComponent
   ],
   imports: [
     BrowserModule,
