@@ -29,7 +29,7 @@ export class EnterFilterTextComponent implements OnInit {
     this.inputText$.pipe(
       debounceTime(500),
       distinctUntilChanged(),
-      filter((inputText: string) => inputText.length > 3 || inputText.length === 0),
+      filter((inputText: string) => inputText.length > 1 || inputText.length === 0),
     ).subscribe(filterText =>
       this.store.dispatch(appActions.updateFilterText({ filterText }))
     )
