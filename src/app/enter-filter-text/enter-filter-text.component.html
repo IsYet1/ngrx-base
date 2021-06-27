@@ -1,1 +1,5 @@
-<p>enter-filter-text works!</p>
+<h1>Entry field here</h1>
+<input type="text" [(ngModel)]="filterText" name="filterText" (ngModelChange)="inputChanged($event)">
+<!-- <input type="text" [(ngModel)]="filterText" placeholder="Filter Text" name="filterText"> -->
+
+{{ filterText }}

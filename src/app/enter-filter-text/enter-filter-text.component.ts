@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/appState/index';
 import * as appActions from 'src/app/appState/app.actions';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-enter-filter-text',
@@ -10,6 +11,7 @@ import * as appActions from 'src/app/appState/app.actions';
   styleUrls: ['./enter-filter-text.component.scss']
 })
 export class EnterFilterTextComponent implements OnInit {
+  filterText = '';
 
   constructor(
     private store: Store<AppState>,
@@ -17,6 +19,13 @@ export class EnterFilterTextComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.dispatch(appActions.updateFilterText({filterText: 'Set manually in the ngOnInit'}));
+  }
+
+  inputChanged = (event: any) => {
+    console.log('Input Changed:', event)
+    of(event).pipe().subscribe(filterText =>
+      this.store.dispatch(appActions.updateFilterText({ filterText }))
+    )
   }
 
 }
